@@ -65,3 +65,16 @@ model Product {
   orders      Order[]
   updatedAt   DateTime @updatedAt
 }
+
+model OwnFirst {
+  createdAt DateTime            @default(now())
+  id        String              @id @default(cuid())
+  name      String?
+  status    EnumOwnFirstStatus?
+  updatedAt DateTime            @updatedAt
+}
+
+enum EnumOwnFirstStatus {
+  Active
+  Inactive
+}
